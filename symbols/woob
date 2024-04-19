@@ -1,0 +1,119 @@
+// My keyboard layouts
+
+// FHAE layout as per my oxelylzer settings
+// Basic variant that moves keys around.
+
+// 1 2 3 4 5  6 7 8 9 0 [ ]
+// , y o u j  q c n v z / =
+//  f h a e '  m t r s p -
+//   . k x i ;  g d l b w
+
+default partial alphanumeric_keys modifier_keys
+xkb_symbols "fhae" {
+    include "us(dvorak)"
+    name[Group1]= "woob-fhae (US)";
+
+    // Top Row
+    key <AD01>	{[     comma,    less,          dead_cedilla,  dead_caron ]};
+    key <AD02>	{[         y,    Y          ]};
+    key <AD03>	{[         o,    O          ]};
+    key <AD04>	{[         u,    U          ]};
+    key <AD05>	{[         j,    J          ]};
+    key <AD06>	{[         q,    Q          ]};
+    key <AD07>	{[         c,    C          ]};
+    key <AD08>	{[         n,    N          ]};
+    key <AD09>	{[         v,    V          ]};
+    key <AD10>	{[         z,    Z          ]};
+
+    //Middle Row
+    key <AC01>	{[         f,    F          ]};
+    key <AC02>	{[         h,    H          ]};
+    key <AC03>	{[         a,    A          ]};
+    key <AC04>	{[         e,    E          ]};
+    key <AC05>	{[apostrophe,    quotedbl,      dead_acute,  dead_diaeresis ]};
+    key <AC06>	{[         m,    M          ]};
+    key <AC07>	{[         t,    T          ]};
+    key <AC08>	{[         r,    R          ]};
+    key <AC09>	{[         s,    S          ]};
+    key <AC10>	{[	       p,    P          ]};
+
+    // Bottom Row
+    key <AB01>	{[    period,    greater,       dead_abovedot,  periodcentered ]};
+    key <AB02>	{[         k,    K          ]};
+    key <AB03>	{[         x,    X          ]};
+    key <AB04>	{[         i,    I          ]};
+    key <AB05>	{[ semicolon,    colon,         dead_ogonek,  dead_doubleacute ]};
+    key <AB06>	{[         g,    G          ]};
+    key <AB07>	{[         d,    D          ]};
+    key <AB08>	{[         l,    L          ]};
+    key <AB09>	{[         b,    B          ]};
+    key <AB10>	{[         w,    W          ]};
+};
+
+// A wide variant with some mild shift changes
+// 9 0 now have curlies under since not very common in day-to-day writing
+// () are on the same key as []
+// () is on layer 0 as most common for typing (this like setence)
+// also good if you code in Lisp/Haskell/Nix
+
+//  1 2 3 4 5 = 6 7 8 9 0 -
+//  , y o u j ( q c n v z /
+//   f h a e ' ) m t r s p
+//    . k x i ; g d l b w
+
+// ! @ # $ % + ^ & * { } _
+// < Y O U J [ Q C N V Z ?
+//  F H A E " ] M T R S P
+//   > K X I : G D L B W
+
+partial alphanumeric_keys
+xkb_symbols "fhae-wide" {
+    include "woob(fhae)"
+    name[Group1]= "woob-fhae-wide (US)";
+
+    // Number Row
+    key <AE06>  {[     equal,    plus       ]};
+    key <AE07>	{[         6,    asciicircum,   dead_circumflex,  dead_circumflex ]};
+    key <AE08>	{[         7,    ampersand  ]};
+    key <AE09>	{[         8,    asterisk   ]};
+    key <AE10>	{[         9,    braceleft,     dead_grave,  dead_breve ]};
+    key <AE11>	{[         0,    braceright ]};
+    key <AE12>	{[     minus,    underscore ]};
+
+    // Top Row
+    key <AD06>	{[ parenleft,    bracketleft ]};
+    key <AD07>	{[         q,    Q           ]};
+    key <AD08>	{[         c,    C           ]};
+    key <AD09>	{[         n,    N           ]};
+    key <AD10>	{[         v,    V           ]};
+    key <AD11>	{[         z,    Z           ]};
+
+    //Middle Row
+    key <AC06>	{[parenright, bracketright, dead_tilde]};
+    key <AC07>	{[         m,    M          ]};
+    key <AC08>	{[         t,    T          ]};
+    key <AC09>	{[         r,    R          ]};
+    key <AC10>	{[         s,    S          ]};
+    key <AC11>	{[	       p,    P          ]};
+
+    // Bottom Row
+    // same as fhae
+};
+
+
+// extended wide variant with = - next to each other.
+//  1 2 3 4 5 = - 6 7 8 9 0
+
+partial alphanumeric_keys
+xkb_symbols "fhae-ewide" {
+    include "woob(fhae-wide)"
+    name[Group1]= "woob-fhae-ewide (US)";
+
+    key <AE07>	{[     minus,    underscore ]};
+    key <AE08>	{[         6,    asciicircum,   dead_circumflex,  dead_circumflex ]};
+    key <AE09>	{[         7,    ampersand  ]};
+    key <AE10>	{[         8,    asterisk   ]};
+    key <AE11>	{[         9,    braceleft,     dead_grave,  dead_breve ]};
+    key <AE12>	{[         0,    braceright ]};
+
+};
